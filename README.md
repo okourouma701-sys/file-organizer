@@ -1,43 +1,42 @@
-# File Organizer 2.0
+# Book Scraper
 
-A safe file automation tool that sorts messy folders by file type — with preview, confirmation, full logging, and undo.
+A multi-page web scraper that collects book data, analyses prices with Pandas, and generates visual reports.
 
 ## The problem it solves
 
-Manually sorting hundreds of files takes hours. This tool does it in seconds — safely.
+Collecting product data across dozens of pages by hand takes hours and is error-prone. This tool scrapes it all in seconds and delivers a clean, analysis-ready spreadsheet.
 
 ## Features
 
-- **Dry-run preview** — see exactly what will be moved before anything happens
-- **Confirmation required** — nothing moves without approval
-- **Timestamped log** — a full audit trail of every action
-- **Undo** — reverse the last run instantly
-- **Standalone app** — packaged with PyInstaller, runs without Python installed
+- **Multi-page scraping** — automatically walks through paginated listings
+- **Clean data export** — outputs a CSV ready to open in Excel or Google Sheets
+- **Price analysis** — average, minimum, and maximum prices via Pandas
+- **Visual report** — bar chart of the top 10 most expensive items
+- **Menu interface** — run analysis or regenerate the chart on demand
 
 ## Demo
 
-![Demo](démo.png)
+![Demo](report_chart.png)
 
-## How it works
+## Sample output
 
-Files are matched to categories by extension and moved into subfolders:
+The scraper produces a two-column CSV:
 
-| Category | Extensions |
+| Title | Price |
 |---|---|
-| Images | .jpg, .jpeg, .png, .gif |
-| Documents | .pdf, .txt, .docx |
-| Data | .csv, .xlsx, .json |
-| Code | .py, .html, .sql |
-| Audio | .mp3, .wav |
+| A Light in the Attic | 51.77 |
+| Tipping the Velvet | 53.74 |
+
+See `books_report.csv` for the full dataset.
 
 ## Built with
 
-Python · `os` · `shutil` · `datetime` · PyInstaller
+Python · `requests` · `BeautifulSoup` · `pandas` · `matplotlib` · `csv`
 
 ## Usage
 
 ```
-python3 organizer2.py
+python3 project.py
 ```
 
-Then choose: `1` to organize, `2` to undo, `3` to quit.
+The scraper runs automatically, then offers a menu: `1` for statistics, `2` to generate the chart, `3` to quit.
