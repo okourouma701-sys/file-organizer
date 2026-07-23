@@ -16,7 +16,7 @@ Manually sorting hundreds of files takes hours. This tool does it in seconds —
 
 ## Demo
 
-![Demo](demo.png)
+![Demo](démo.png)
 
 ## How it works
 
